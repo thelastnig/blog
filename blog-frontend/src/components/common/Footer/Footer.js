@@ -1,0 +1,21 @@
+import React from 'react';
+import styles from './Footer.scss';
+import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
+
+const cx = classNames.bind(styles);
+
+const Footer = ({onLoginClick, logged}) => {
+  return (
+    <footer className={cx('footer')}>
+      <div className={cx('brand')}>
+        <Link to='/'>reactblog</Link>
+      </div>
+      <div onClick={onLoginClick} className={cx('admin-login')}>
+        {logged? '로그아웃' : '관리자 로그인'}
+      </div>
+    </footer>
+  );
+
+}
+export default Footer;
